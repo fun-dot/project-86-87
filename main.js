@@ -3,19 +3,19 @@ player_x=10;
 player_y=10;
 block_image_width=30;
 block_image_height=30;
-var AVENGER_ob ="";
+var player_ob ="";
 var block_image_ob="";
 function player_update()
 {
-fabric.Image.fromURL("PLAYER.jpg",function(Img){
-AVENGER_ob=Img;
-AVENGER_ob.scaleToWidth(150);
-AVENGER_ob.scaleToHeight(140);
-AVENGER_ob.set({
-top:AVENGER_y,
-left:AVENGER_x
+fabric.Image.fromURL("player.png",function(Img){
+player_ob=Img;
+player_ob.scaleToWidth(150);
+player_ob.scaleToHeight(140);
+player_ob.set({
+top:player_y,
+left:player_x
 });
-canvas.add(AVENGER_ob);
+canvas.add(player_ob);
 });
 }
 function new_image(get_image)
@@ -25,30 +25,11 @@ block_image_ob=Img;
 block_image_ob.scaleToWidth(block_image_width);
 block_image_ob.scaleToHeight(block_image_height);
 block_image_ob.set({
-top:AVENGER_y,
-left:AVENGER_x
+top:player_y,
+left:player_x
 });
 canvas.add(block_image_ob);
 });
-}  window.addEventListener("keydown",my_keydown);
-function my_keydown(e){
-  keyPressed=e.keyCode;
-  console.log(keyPressed);
-if(e.shiftKey==true && keyPressed=='80')
-{
-console.log("p & shift pressed together");
-block_image_height=block_image_height +10;
-block_image_width=block_image_width +10;
-document.getElementById("current_width").innerHTML=block_image_width;
-document.getElementById("current_height").innerHTML=block_image_height;
-}
-if(e.shiftKey==true && keyPressed=='77')
-{
-console.log("m & shift pressed together");
-block_image_height=block_image_height -10;
-block_image_width=block_image_width -10;
-document.getElementById("current_width").innerHTML=block_image_width;
-document.getElementById("current_height").innerHTML=block_image_height;
 }
 window.addEventListener("keydown",my_keydown);
 function my_keydown(e){
@@ -91,29 +72,29 @@ if(keyPressed=='39')
 right();
 console.log("right");
 }
-if(keyPressed=='81')
+if(keyPressed=='37')
 {
 new_image('hulk_left_hand.png');
-console.log("q");
-}
-if(keyPressed=='87')
-{
-new_image('hulk.png');
 console.log("w");
 }
-if(keyPressed=='69')
+if(keyPressed=='71')
+{
+new_image('hulk.png');
+console.log("g");
+}
+if(keyPressed=='76')
 {
 new_image('ironman_body.png');
-console.log("e");
+console.log("l");
 }
 if(keyPressed=='84')
 {
-new_image('ironman_legs.png');
+new_image('ironman_face.png');
 console.log("t");
 }
 if(keyPressed=='82')
 {
-new_image('ironman_face.png');
+new_image('ironman_legs.png');
 console.log("r");
 }
 if(keyPressed=='89')
@@ -121,14 +102,14 @@ if(keyPressed=='89')
 new_image('player.png');
 console.log("y");
 }
-if(keyPressed=='85')
+if(keyPressed=='68')
 {
 new_image('thor_face.png');
-console.log("u");
+console.log("d");
 }
-if(keyPressed=='73')
+if(keyPressed=='67')
 {
 new_image('thor_right_hand(1).png');
-console.log("i");
+console.log("c");
 }
 }
